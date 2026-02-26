@@ -1,0 +1,115 @@
+/* Variables de color para mantener la estética Salesiana/ITIL */
+:root {
+    --primary-red: #dc3545;
+    --light-pink: #f8d7da;
+    --dark-text: #2d3436;
+    --bg-light: #f4f7f6;
+    --white: #ffffff;
+    --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    --p1-color: #ff4757; /* Crítica */
+    --p2-color: #ffa502; /* Media */
+    --p3-color: #2ed573; /* Baja */
+}
+
+body {
+    font-family: 'Open Sans', sans-serif;
+    background-color: var(--bg-light);
+    color: var(--dark-text);
+    margin: 0;
+    padding: 0;
+}
+
+/* Navbar personalizada */
+.navbar {
+    background-color: var(--white) !important;
+    border-bottom: 2px solid var(--primary-red);
+    box-shadow: var(--shadow);
+}
+
+.navbar-brand {
+    color: var(--primary-red) !important;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* Tarjetas del Dashboard (Stats) */
+.card {
+    border: none;
+    border-radius: 12px;
+    transition: transform 0.2s ease;
+    box-shadow: var(--shadow);
+}
+
+.card:hover {
+    transform: translateY(-5px);
+}
+
+.display-5 {
+    font-weight: 800;
+    color: var(--dark-text);
+}
+
+/* Botones con estilo moderno */
+.btn-danger {
+    background-color: var(--primary-red);
+    border: none;
+    border-radius: 8px;
+    padding: 12px 24px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.btn-danger:hover {
+    background-color: #bd2130;
+    box-shadow: 0 4px 12px rgba(220, 53, 69, 0.4);
+}
+
+/* Badges de Criticidad */
+.badge-p1 { background-color: var(--p1-color); color: white; }
+.badge-p2 { background-color: var(--p2-color); color: white; }
+.badge-p3 { background-color: var(--p3-color); color: white; }
+
+/* Formulario de Login y Registro */
+.auth-card {
+    max-width: 400px;
+    margin: auto;
+    padding: 2rem;
+    background: var(--white);
+    border-radius: 15px;
+}
+
+.form-control {
+    border-radius: 8px;
+    border: 1px solid #dfe6e9;
+    padding: 12px;
+}
+
+.form-control:focus {
+    border-color: var(--primary-red);
+    box-shadow: 0 0 0 0.2rem rgba(220, 53, 69, 0.25);
+}
+
+/* Estilos para la tabla de tickets */
+.table {
+    background: var(--white);
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.table thead {
+    background-color: var(--light-pink);
+    color: var(--primary-red);
+}
+
+/* Responsive: Ajustes para móvil */
+@media (max-width: 768px) {
+    .display-5 {
+        font-size: 2.5rem;
+    }
+    
+    .container {
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+}
