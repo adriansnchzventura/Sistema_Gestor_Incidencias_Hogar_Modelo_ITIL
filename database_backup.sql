@@ -54,3 +54,31 @@ INSERT INTO `categorias` (`nombre`, `sla_horas`) VALUES
 
 ALTER TABLE `tickets` 
 ADD COLUMN `notas_resolucion` TEXT NULL AFTER `fecha_resolucion`;
+
+-- 5. Tabla de Comentarios (Indispensable para ITIL)
+CREATE TABLE IF NOT EXISTS `ticket_comentarios` (
+  `id_comentario` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `id_ticket` int(10) unsigned NOT NULL,
+  `id_usuario` int(10) unsigned NOT NULL,
+  `comentario` text NOT NULL,
+  `fecha` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  PRIMARY KEY (`id_comentario`),
+  FOREIGN KEY (`id_ticket`) REFERENCES `tickets` (`id_ticket`) ON DELETE CASCADE,
+  FOREIGN KEY (`id_usuario`) REFERENCES `usuarios` (`id_usuario`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+-- 6. Añadir campo de técnico asignado a la tabla de tickets
+ALTER TABLE `tickets` 
+ADD COLUMN `id_tecnico` int(10) unsigned NULL AFTER `id_usuario`,
+ADD FOREIGN KEY (`id_tecnico`) REFERENCES `usuarios` (`id_usuario`);
+
+-- 7. (Opcional pero recomendado) Tabla de Logs para auditoría de estados
+CREATE TABLE IF NOT EXISTS `ticket_log` (
+  `id_log` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `id_ticket` int(10) unsigned NOT NULL,
+  `estado_anterior` varchar(50),
+  `estado_nuevo` varchar(50),
+  `fecha_cambio` datetime DEFAULT CURRENT_TIMESTAMP,
+  PRIMARY KEY (`id_log`),
+  FOREIGN KEY (`id_ticket`) REFERENCES `tickets` (`id_ticket`) ON DELETE CASCADE
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
