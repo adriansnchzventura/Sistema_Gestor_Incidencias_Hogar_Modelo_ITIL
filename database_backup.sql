@@ -44,7 +44,7 @@ CREATE TABLE IF NOT EXISTS `tickets` (
 -- ==========================================
 
 INSERT INTO `usuarios` (`nombre`, `apellidos`, `email`, `password`, `rol`) 
-VALUES ('KikoAdmin', 'Sanchez', 'admin@casa.com', '$2y$10$TBmy5kr.1yeFzoUf6Jo04efooY3AS.zZD52FqL9VOH4hSvqU7o8wW', 'administrador');
+VALUES ('Admin123', 'examplesurname', 'admin@casa.com', '$2y$10$TBmy5kr.1yeFzoUf6Jo04efooY3AS.zZD52FqL9VOH4hSvqU7o8wW', 'administrador');
 
 INSERT INTO `categorias` (`nombre`, `sla_horas`) VALUES 
 ('Internet / El WiFi va mal', 2), 
