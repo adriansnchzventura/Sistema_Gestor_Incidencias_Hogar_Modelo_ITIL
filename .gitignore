@@ -24,6 +24,9 @@
 /app/Config/database.php
 /vendors/*
 
+# Configuración de Base de Datos (Seguridad)
+database_config.php
+
 # Fotos de perfil reales (Privacidad)
 img/perfiles/*
 !img/perfiles/.gitkeep
