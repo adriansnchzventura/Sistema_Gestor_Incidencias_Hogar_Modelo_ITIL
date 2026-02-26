@@ -1,35 +1,67 @@
-#  Sistema de Gestión de Incidencias IT - Hogar (Basado en ITIL)
+Sistema de Gestión de Incidencias IT - Entorno Doméstico
+Este proyecto implementa una plataforma de Service Desk basada en los fundamentos de ITIL (Information Technology Infrastructure Library). Su objetivo es centralizar y estandarizar el soporte técnico en entornos de pequeña oficina o domésticos, garantizando el cumplimiento de tiempos de respuesta y la trazabilidad de las soluciones.
 
-Este proyecto es una plataforma de **Service Desk** simplificada, diseñada para gestionar el soporte técnico dentro de un entorno familiar o pequeña oficina, aplicando los principios de la biblioteca **ITIL (Information Technology Infrastructure Library)**.
+Arquitectura y Funcionalidades
+Gestión de Incidencias y Niveles de Servicio (SLA)
+El sistema clasifica las peticiones mediante una matriz de prioridad que determina el tiempo de resolución garantizado:
 
+Prioridad 1 (Crítica): Resolución en un máximo de 4 horas.
 
+Prioridad 2 (Alta): Resolución en un máximo de 24 horas.
 
-##  Características Principales
+Prioridad 3 (Media/Baja): Resolución en un máximo de 72 horas.
 
-* **Gestión de Incidencias:** Registro de tickets con categorización y niveles de prioridad (P1, P2, P3).
-* **Gestión de Niveles de Servicio (SLA):** Control visual de tiempos de respuesta según criticidad:
-    * **P1 (Crítico):** 4 Horas.
-    * **P2 (Alta):** 24 Horas.
-    * **P3 (Media/Baja):** 72 Horas.
-* **Panel de Administración:** Control total de estados de tickets y notas de resolución.
-* **Gestión de Usuarios:** Registro, roles (Admin/Usuario) y personalización de perfiles con fotografía.
-* **Base de Conocimientos:** Almacenamiento de soluciones en los tickets resueltos para consultas futuras.
+Módulos Principales
+Panel de Administración: Interfaz para la gestión del ciclo de vida del ticket (Apertura, Asignación, Progreso y Cierre).
 
-##  Tecnologías Utilizadas
+Control de Usuarios: Sistema de autenticación con segregación de funciones basada en roles (Administrador y Usuario Final).
 
-* **Backend:** PHP 8.x
-* **Base de Datos:** MySQL / MariaDB
-* **Frontend:** Bootstrap 5, Bootstrap Icons, Google Fonts
-* **Entorno Recomendado:** AppServ, XAMPP o Laragon
+Gestión de Activos y Perfiles: Personalización de cuentas de usuario incluyendo almacenamiento de imágenes de perfil.
 
-##  Requisitos Previos
+Knowledge Base (KEDB): Repositorio de soluciones basado en tickets históricos resueltos para la reducción de tiempos de respuesta en incidencias recurrentes.
 
-1. Tener un servidor local activo (Apache y MySQL).
-2. Crear una base de datos llamada `sistema_tickets`.
-3. Importar el archivo `database.sql` incluido en este repositorio.
+Especificaciones Técnicas
+Motor de Backend: PHP 8.x
 
-##  Instalación y Configuración
+Gestor de Base de Datos: MySQL / MariaDB (Motor InnoDB para integridad referencial)
 
-1. **Clonar el repositorio** en tu carpeta de servidor (ej. `www/` o `htdocs/`):
-   ```bash
-   git clone [https://github.com/tu-usuario/ITIL_CASA.git](https://github.com/tu-usuario/ITIL_CASA.git)
+Framework de Frontend: Bootstrap 5 (Responsive Design)
+
+Componentes Adicionales: Bootstrap Icons, Google Fonts API
+
+Despliegue del Sistema
+Requisitos del Entorno
+Servidor web Apache 2.4+
+
+Intérprete de PHP 8.0 o superior
+
+Instancia de MySQL/MariaDB activa
+
+Procedimiento de Instalación
+Obtención del código fuente:
+Clonar el repositorio en el directorio raíz del servidor web (ej: www/ o htdocs/):
+
+Bash
+git clone https://github.com/adriansnchzventura/Sistema_Gestor_Incidencias_Hogar_Modelo_ITIL.git
+Configuración de la Base de Datos:
+
+Crear una base de datos denominada sistema_tickets.
+
+Importar el esquema definido en el archivo database.sql.
+
+Parámetros de Conexión:
+Renombrar el archivo database_config.php.example a database_config.php y editar las constantes de conexión con las credenciales de su entorno local:
+
+PHP
+define('DB_SERVER', 'localhost');
+define('DB_USER', 'root');
+define('DB_PASS', 'su_contraseña');
+define('DB_NAME', 'sistema_tickets');
+Permisos de Directorio:
+Asegurar permisos de escritura en la carpeta img/perfiles/ para permitir la carga de imágenes de usuario.
+
+Seguridad y Privacidad
+Este proyecto utiliza password_hash() para el almacenamiento seguro de credenciales. Se recomienda encarecidamente no incluir el archivo database_config.php en sistemas de control de versiones públicos para evitar la exposición de credenciales de acceso a la base de datos.
+
+Licencia
+Este software se distribuye bajo la licencia MIT.
