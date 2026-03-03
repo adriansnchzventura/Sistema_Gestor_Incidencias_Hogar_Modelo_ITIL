@@ -20,7 +20,8 @@ Gestión de Activos y Perfiles :busts_in_silhouette: : Personalización de cuent
 
 Knowledge Base (KEDB) :card_file_box: : Repositorio de soluciones basado en tickets históricos resueltos para la reducción de tiempos de respuesta en incidencias recurrentes.
 
-Especificaciones Técnicas
+Especificaciones Técnicas:
+
 Motor de Backend: PHP 8.x :white_check_mark:
 
 Gestor de Base de Datos: MySQL / MariaDB (Motor InnoDB para integridad referencial) :white_check_mark:
