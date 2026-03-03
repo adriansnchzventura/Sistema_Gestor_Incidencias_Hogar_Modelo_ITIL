@@ -1,4 +1,4 @@
-:page_facing_up: # Sistema de Gestión de Incidencias IT - Entorno Doméstico # :page_facing_up:
+# :page_facing_up:  Sistema de Gestión de Incidencias IT - Entorno Doméstico :page_facing_up:
 Este proyecto implementa una plataforma de Service Desk basada en los fundamentos de ITIL (Information Technology Infrastructure Library). Su objetivo es centralizar y estandarizar el soporte técnico en entornos de pequeña oficina o domésticos, garantizando el cumplimiento de tiempos de respuesta y la trazabilidad de las soluciones.
 
 Arquitectura y Funcionalidades
