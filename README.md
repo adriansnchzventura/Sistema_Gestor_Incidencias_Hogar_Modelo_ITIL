@@ -1,4 +1,4 @@
-Sistema de Gestión de Incidencias IT - Entorno Doméstico
+:page_facing_up: # Sistema de Gestión de Incidencias IT - Entorno Doméstico # :page_facing_up:
 Este proyecto implementa una plataforma de Service Desk basada en los fundamentos de ITIL (Information Technology Infrastructure Library). Su objetivo es centralizar y estandarizar el soporte técnico en entornos de pequeña oficina o domésticos, garantizando el cumplimiento de tiempos de respuesta y la trazabilidad de las soluciones.
 
 Arquitectura y Funcionalidades
@@ -12,24 +12,24 @@ Prioridad 2 (Alta): Resolución en un máximo de 24 horas.
 Prioridad 3 (Media/Baja): Resolución en un máximo de 72 horas.
 
 Módulos Principales
-Panel de Administración: Interfaz para la gestión del ciclo de vida del ticket (Apertura, Asignación, Progreso y Cierre).
+Panel de Administración :lock: : Interfaz para la gestión del ciclo de vida del ticket (Apertura, Asignación, Progreso y Cierre).
 
 Control de Usuarios: Sistema de autenticación con segregación de funciones basada en roles (Administrador y Usuario Final).
 
-Gestión de Activos y Perfiles: Personalización de cuentas de usuario incluyendo almacenamiento de imágenes de perfil.
+Gestión de Activos y Perfiles :busts_in_silhouette: : Personalización de cuentas de usuario incluyendo almacenamiento de imágenes de perfil.
 
-Knowledge Base (KEDB): Repositorio de soluciones basado en tickets históricos resueltos para la reducción de tiempos de respuesta en incidencias recurrentes.
+Knowledge Base (KEDB) :card_file_box: : Repositorio de soluciones basado en tickets históricos resueltos para la reducción de tiempos de respuesta en incidencias recurrentes.
 
 Especificaciones Técnicas
-Motor de Backend: PHP 8.x
+Motor de Backend: PHP 8.x :white_check_mark:
 
-Gestor de Base de Datos: MySQL / MariaDB (Motor InnoDB para integridad referencial)
+Gestor de Base de Datos: MySQL / MariaDB (Motor InnoDB para integridad referencial) :white_check_mark:
 
-Framework de Frontend: Bootstrap 5 (Responsive Design)
+Framework de Frontend: Bootstrap 5 (Responsive Design) :white_check_mark:
 
-Componentes Adicionales: Bootstrap Icons, Google Fonts API
+Componentes Adicionales: Bootstrap Icons, Google Fonts API :white_check_mark:
 
-Despliegue del Sistema
+Despliegue del Sistema :rocket:
 Requisitos del Entorno
 Servidor web Apache 2.4+
 
@@ -49,7 +49,7 @@ Crear una base de datos denominada sistema_tickets.
 
 Importar el esquema definido en el archivo database.sql.
 
-Parámetros de Conexión:
+Parámetros de Conexión :zap: :
 Renombrar el archivo database_config.php.example a database_config.php y editar las constantes de conexión con las credenciales de su entorno local:
 
 PHP
@@ -60,8 +60,8 @@ define('DB_NAME', 'sistema_tickets');
 Permisos de Directorio:
 Asegurar permisos de escritura en la carpeta img/perfiles/ para permitir la carga de imágenes de usuario.
 
-Seguridad y Privacidad
+Seguridad y Privacidad :passport_control:
 Este proyecto utiliza password_hash() para el almacenamiento seguro de credenciales. Se recomienda encarecidamente no incluir el archivo database_config.php en sistemas de control de versiones públicos para evitar la exposición de credenciales de acceso a la base de datos.
 
-Licencia
+Licencia :page_facing_up:
 Este software se distribuye bajo la licencia MIT.
